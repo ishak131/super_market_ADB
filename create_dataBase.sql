@@ -213,7 +213,7 @@ VALUES(
     0,
     new.total_price,
     new.total_profits,
-    MONTHNAME('2022-2-28')
+    MONTHNAME(NOW())
   ) ON DUPLICATE KEY
 UPDATE
   sales = sales + new.total_price,
@@ -225,7 +225,7 @@ VALUES(
     new.total_price,
     0,
     new.total_profits,
-    MONTHNAME('2022-1-3')
+    MONTHNAME(NOW())
   ) ON DUPLICATE KEY
 UPDATE
   purchases = purchases + new.total_price,
